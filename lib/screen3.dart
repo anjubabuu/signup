@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:registration/nextpage.dart';
 class Screen1 extends StatelessWidget {
-  const Screen1({super.key});
-
+  Screen1({super.key,required this.username,required this.email,required this.password,required this.confirm,});
+  String username;
+  String email;
+  String password;
+  String confirm;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -18,7 +21,8 @@ class Screen1 extends StatelessWidget {
             ),
           ),
 
-          Text("CREPIN FEDJO",
+          Text(
+            "CREPTIN FEDJE",
             style: TextStyle(color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -40,10 +44,10 @@ class Screen1 extends StatelessWidget {
                   size: 20.0,
                   color: Colors.green,
                 ),
-                Text("+9898965486",
+                Text(username,
                   textAlign: TextAlign.left,
                 ),
-              ],
+                ],
             ),
           ),
           SizedBox(
@@ -61,10 +65,29 @@ class Screen1 extends StatelessWidget {
                   size: 20,
                   color: Colors.green,
                 ),
-                Text("flutter@gmail.com")
+                Text("flutter@gmail.com"),
+                TextButton(
+                  onPressed: (){
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => next()));
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    "view",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
 

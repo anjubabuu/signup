@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:registration/screen3.dart';
 
 class Screen2 extends StatelessWidget {
-   Screen2({super.key});
+
   final myController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
@@ -104,7 +104,7 @@ class Screen2 extends StatelessWidget {
               print(passController.text);
               print(conController.text);
                Navigator.push(
-                   context, MaterialPageRoute(builder: (context) => Screen1()));
+                   context, MaterialPageRoute(builder: (context) => Screen1(username: myController.text,email: emailController.text,password: passController.text,confirm: conController.text,),));
             },
             style: TextButton.styleFrom(
               backgroundColor: Colors.purple,
